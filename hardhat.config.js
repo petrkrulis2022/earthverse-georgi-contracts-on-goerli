@@ -4,7 +4,7 @@ require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
 
 module.exports = {
-  defaultNetwork: "binanceSmartChainTestNet",
+  defaultNetwork: "goerliTestNet",
   networks: {
     hardhat: {},
     goerliTestNet: {

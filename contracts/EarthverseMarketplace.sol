@@ -39,8 +39,8 @@ contract EarthverseMarketplace is
     uint256 tokenId,
     address spender
   ) {
-    address _owner = nftLand.ownerOf(tokenId);
-    if (spender != _owner) revert EarthverseMarketplace_NotOwner();
+    if (spender != nftLand.ownerOf(tokenId))
+      revert EarthverseMarketplace_NotOwner();
     _;
   }
 
