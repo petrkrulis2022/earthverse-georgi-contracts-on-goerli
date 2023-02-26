@@ -12,6 +12,11 @@ module.exports = {
       accounts: [process.env.WALLET_PRIVATE_KEY],
       chainId: 5,
     },
+    ethereumMainnet: {
+      url: process.env.ETHEREUM_MAIN_NET_PROVIDER_URL,
+      accounts: [process.env.WALLET_PRIVATE_KEY],
+      chainId: 1,
+    },
   },
   solidity: {
     version: "0.8.17",
