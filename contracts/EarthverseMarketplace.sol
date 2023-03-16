@@ -24,14 +24,6 @@ contract EarthverseMarketplace is
 {
   uint256 public itemCount;
 
-  struct ListingNFTLand {
-    uint256 id;
-    IERC721 nftLand;
-    uint256 tokenId;
-    uint256 price;
-    address seller;
-  }
-
   mapping(uint256 => ListingNFTLand) public listing;
 
   modifier isOwner(
@@ -54,22 +46,6 @@ contract EarthverseMarketplace is
     if (_address == address(0)) revert EarthverseMarketplace_ZeroAddress();
     _;
   }
-
-  // Events
-  event NFTLandListed(
-    uint256 itemId,
-    uint256 indexed tokenId,
-    uint256 indexed price,
-    address indexed seller
-  );
-
-  event NFTLandBought(
-    uint256 itemId,
-    uint256 price,
-    uint256 indexed tokenId,
-    address indexed seller,
-    address indexed buyer
-  );
 
   /// @notice Allows the user/seller to add new NFT Land.
   /// @param nftLand: The address of NFT Land contract

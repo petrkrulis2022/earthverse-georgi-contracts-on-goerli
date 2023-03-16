@@ -2,7 +2,7 @@
 pragma solidity ^0.8.17;
 
 import {INFTDollar} from "./interfaces/INFTDollar.sol";
-import {IRocketpool, IWETH} from "./interfaces/IEarthverseDeposit.sol";
+import {IEarthverseDeposit, IRocketpool, IWETH} from "./interfaces/IEarthverseDeposit.sol";
 import {IEarthverseMarketplace} from "./interfaces/IEarthverseMarketplace.sol";
 import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
@@ -20,7 +20,7 @@ error EarthverseDeposit_NotAvailableStablecoinForBuyNFTLand(address stablecoin);
 /// @author Georgi Karagyozov
 /// @notice EarthverseDeposit contract that is used to call the EarthverseMarketplace and NFDTollar contracts
 /// and deposit a stablecoin(USDC, DAI, USDT etc.) which swaped for WETH and staking it in Rocket Pool.
-contract EarthverseDeposit is AccessControl {
+contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
   bytes32 public constant ADDER_STABLECOIN_ROLE =
     keccak256("ADDER_STABLECOIN_ROLE");
   address public constant WETH = 0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6;
@@ -47,14 +47,6 @@ contract EarthverseDeposit is AccessControl {
     if (_address == address(0)) revert EarthverseDeposit_ZeroAddress();
     _;
   }
-
-  // Events
-  event NewStablecoinAddressAdded(address stablecoinAddress);
-  event StablecoinAddressRemoved(address stablecoinAddress);
-  event StakedAndReceivedNFTLand(
-    address indexed sender,
-    uint256 indexed amountOut
-  );
 
   constructor(address _nftd, address _earthverseMarketplace) {
     if (_nftd == address(0) || _earthverseMarketplace == address(0))

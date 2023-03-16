@@ -13,8 +13,6 @@ error AccessContract_NotHaveAccess(address sender);
 contract AccessContract is Ownable, IAccessContract {
   address public earthverseDepositAddress;
 
-  event EarthverseDepositAddressChanged(address oldAddress, address newAddress);
-
   modifier onlyEarthverseDeposit() {
     if (msg.sender != earthverseDepositAddress)
       revert AccessContract_NotHaveAccess(msg.sender);

@@ -14,20 +14,15 @@ abstract contract Ownable is IOwnable {
   address private _owner;
   address public pendingOwner;
 
-  event OwnershipTransferred(
-    address indexed previousOwner,
-    address indexed newOwner
-  );
-
-  /// @notice Initializes the contract setting the deployer as the initial owner.
-  constructor() {
-    _transferOwnership(msg.sender);
-  }
-
   /// @notice Throws if called by any account other than the owner.
   modifier onlyOwner() {
     if (owner() != msg.sender) revert Ownable_CallerIsNotTheOwner();
     _;
+  }
+
+  /// @notice Initializes the contract setting the deployer as the initial owner.
+  constructor() {
+    _transferOwnership(msg.sender);
   }
 
   /// @notice Returns the address of the current owner.
