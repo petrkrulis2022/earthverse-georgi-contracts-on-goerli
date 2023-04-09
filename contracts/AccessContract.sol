@@ -7,31 +7,44 @@ import {IAccessContract} from "./interfaces/IAccessContract.sol";
 // Custom errros
 error AccessContract_ZeroAddress();
 error AccessContract_NotHaveAccess(address sender);
+error AccessContract_AlreadyAvailableContractAdded(address availableContract);
 
 /// @author Georgi Karagyozov
 /// @notice Access Contract contract through which it provides access to certain functions.
 contract AccessContract is Ownable, IAccessContract {
-  address public earthverseDepositAddress;
+  mapping(address => bool) public availableContracts;
 
-  modifier onlyEarthverseDeposit() {
-    if (msg.sender != earthverseDepositAddress)
+  modifier onlyAvailableContract() {
+    if (!availableContracts[msg.sender])
       revert AccessContract_NotHaveAccess(msg.sender);
     _;
   }
 
-  /// @notice Аllows the contract owner to give a new address for earthverseDeposit.
-  /// @param _earthverseDepositAddress: The address of earthverseDeposit contract.
-  function setNewEarthverseDepositAddress(
-    address _earthverseDepositAddress
-  ) external onlyOwner {
-    if (_earthverseDepositAddress == address(0))
-      revert AccessContract_ZeroAddress();
+  modifier zeroAddress(address _address) {
+    if (_address == address(0)) revert AccessContract_ZeroAddress();
+    _;
+  }
 
-    emit EarthverseDepositAddressChanged(
-      earthverseDepositAddress,
-      _earthverseDepositAddress
-    );
+  /// @notice Allows the ownable to add a new address for the availableContracts mapping.
+  /// @param newContractAddress: The new contract address.
+  function addNewAvailableContractAddress(
+    address newContractAddress
+  ) external zeroAddress(newContractAddress) onlyOwner {
+    if (availableContracts[newContractAddress])
+      revert AccessContract_AlreadyAvailableContractAdded(newContractAddress);
 
-    earthverseDepositAddress = _earthverseDepositAddress;
+    availableContracts[newContractAddress] = true;
+
+    emit NewAvailableContractAddressAdded(newContractAddress);
+  }
+
+  /// @notice Allows the ownable to remove a address for the availableContracts mapping.
+  /// @param removeContractAddress: The contract address.
+  function removeAvailableContractAddress(
+    address removeContractAddress
+  ) external zeroAddress(removeContractAddress) onlyOwner {
+    delete (availableContracts[removeContractAddress]);
+
+    emit AvailableContractAddressRemoved(removeContractAddress);
   }
 }

@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/AccessContract.sol": {
-      "lastModificationDate": 1677367338193,
-      "contentHash": "c34515b20b659fd51aad1976e9a40be4",
+      "lastModificationDate": 1680127423872,
+      "contentHash": "28ee42b75a8e66513076f3cffcbb041b",
       "sourceName": "contracts/AccessContract.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -40,8 +40,8 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/Ownable.sol": {
-      "lastModificationDate": 1677367338156,
-      "contentHash": "4c3b3dc37feda36b30fb8820f83bae4c",
+      "lastModificationDate": 1679951791850,
+      "contentHash": "a1985f109001b07923c1cee991fe9b29",
       "sourceName": "contracts/Ownable.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -77,8 +77,8 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IAccessContract.sol": {
-      "lastModificationDate": 1677367338319,
-      "contentHash": "8c53eeef26667272350e06200a6e28b9",
+      "lastModificationDate": 1680127388021,
+      "contentHash": "507b53e800f5525b271f375286333c98",
       "sourceName": "contracts/interfaces/IAccessContract.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -112,8 +112,8 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IOwnable.sol": {
-      "lastModificationDate": 1677367338286,
-      "contentHash": "c1185091432b500b4dfa06f39847b5b7",
+      "lastModificationDate": 1679951791852,
+      "contentHash": "c5a5b4781ad8894e5d6b143991d7372b",
       "sourceName": "contracts/interfaces/IOwnable.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -146,10 +146,10 @@
         "IOwnable"
       ]
     },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/NFTDollar.sol": {
-      "lastModificationDate": 1677367338241,
-      "contentHash": "98b1a87899bf1b7cd6ca8f2b5087bc53",
-      "sourceName": "contracts/NFTDollar.sol",
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/RNFTDollar.sol": {
+      "lastModificationDate": 1680167506140,
+      "contentHash": "11b171773985e8e6921d17fdf6a73fe0",
+      "sourceName": "contracts/RNFTDollar.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -174,7 +174,7 @@
         }
       },
       "imports": [
-        "./interfaces/INFTDollar.sol",
+        "./interfaces/IRNFTDollar.sol",
         "./AccessContract.sol",
         "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol"
       ],
@@ -182,13 +182,13 @@
         "^0.8.17"
       ],
       "artifacts": [
-        "NFTDollar"
+        "RNFTDollar"
       ]
     },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/INFTDollar.sol": {
-      "lastModificationDate": 1677367338340,
-      "contentHash": "b3050376614cf70a2f14336859d71e35",
-      "sourceName": "contracts/interfaces/INFTDollar.sol",
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IRNFTDollar.sol": {
+      "lastModificationDate": 1680167481474,
+      "contentHash": "69816f743c03f835cbf449609dd49d69",
+      "sourceName": "contracts/interfaces/IRNFTDollar.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -217,11 +217,11 @@
         "^0.8.17"
       ],
       "artifacts": [
-        "INFTDollar"
+        "IRNFTDollar"
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
-      "lastModificationDate": 1677368208437,
+      "lastModificationDate": 1678217790745,
       "contentHash": "a1c7f80ae26f5b2d7d563475627fbf25",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
       "solcConfig": {
@@ -259,7 +259,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/Context.sol": {
-      "lastModificationDate": 1677367761425,
+      "lastModificationDate": 1678217078221,
       "contentHash": "5f2c5c4b6af2dd4551027144797bc8be",
       "sourceName": "@openzeppelin/contracts/utils/Context.sol",
       "solcConfig": {
@@ -294,7 +294,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
-      "lastModificationDate": 1677367921487,
+      "lastModificationDate": 1678217125051,
       "contentHash": "834a0dde221759af42b030253315b086",
       "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
       "solcConfig": {
@@ -333,7 +333,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1677367921474,
+      "lastModificationDate": 1678217125245,
       "contentHash": "ad7c2d0af148c8f9f097d65deeb4da6b",
       "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
       "solcConfig": {
@@ -368,7 +368,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
-      "lastModificationDate": 1677368208468,
+      "lastModificationDate": 1678217790779,
       "contentHash": "909ab67fc5c25033fe6cd364f8c056f9",
       "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
       "solcConfig": {
@@ -405,7 +405,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol": {
-      "lastModificationDate": 1677367389491,
+      "lastModificationDate": 1678217179603,
       "contentHash": "f0616d1842da6584f8454c9b323d777f",
       "sourceName": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol",
       "solcConfig": {
@@ -441,9 +441,379 @@
         "TransferHelper"
       ]
     },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/RNFTDollarDeposit.sol": {
+      "lastModificationDate": 1680167925645,
+      "contentHash": "b92187cf54c68f267892ef39c95e2d7a",
+      "sourceName": "contracts/RNFTDollarDeposit.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IRNFTDollar.sol",
+        "./interfaces/IRNFTDollarDeposit.sol",
+        "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+        "@openzeppelin/contracts/access/AccessControl.sol",
+        "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+        "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "RNFTDollarDeposit"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IRNFTDollarDeposit.sol": {
+      "lastModificationDate": 1680167848610,
+      "contentHash": "4fe455e80898009953688c8b61d071e8",
+      "sourceName": "contracts/interfaces/IRNFTDollarDeposit.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IRNFTDollarDeposit",
+        "IRocketpool",
+        "IWETH"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1678217076739,
+      "contentHash": "95a6c227d1b8843e9385518a5bce4853",
+      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol",
+        "../utils/Context.sol",
+        "../utils/Strings.sol",
+        "../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
+      "lastModificationDate": 1678217179187,
+      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
+      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.5"
+      ],
+      "artifacts": [
+        "ISwapRouter"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1678217078316,
+      "contentHash": "396031251978f8febfd90cb62cb240ec",
+      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Strings"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1678217125586,
+      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
+      "lastModificationDate": 1678217076808,
+      "contentHash": "57c84298234411cea19c7c284d86be8b",
+      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IAccessControl"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1678217125688,
+      "contentHash": "b9c58920ce74d6dc819161786112e7ee",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1678217125639,
+      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
+      "lastModificationDate": 1678217796417,
+      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
+      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV3SwapCallback"
+      ]
+    },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/EarthverseDeposit.sol": {
-      "lastModificationDate": 1677367338144,
-      "contentHash": "ba0e7bce3064e3818f1b92b4aba1dfe8",
+      "lastModificationDate": 1680866280112,
+      "contentHash": "84e63326fd55bf80e87d2ca308ffa6bc",
       "sourceName": "contracts/EarthverseDeposit.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -484,9 +854,44 @@
         "EarthverseDeposit"
       ]
     },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/INFTDollar.sol": {
+      "lastModificationDate": 1679951791853,
+      "contentHash": "790f557ab4adade3e0403284068e68bb",
+      "sourceName": "contracts/interfaces/INFTDollar.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "INFTDollar"
+      ]
+    },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IEarthverseDeposit.sol": {
-      "lastModificationDate": 1677367338330,
-      "contentHash": "9f811608b0606158dae0d34fec1ab12a",
+      "lastModificationDate": 1680164031181,
+      "contentHash": "6e8039b406fe3c9655c73773fa582808",
       "sourceName": "contracts/interfaces/IEarthverseDeposit.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -516,13 +921,14 @@
         "^0.8.17"
       ],
       "artifacts": [
+        "IEarthverseDeposit",
         "IRocketpool",
         "IWETH"
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/IEarthverseMarketplace.sol": {
-      "lastModificationDate": 1677367338310,
-      "contentHash": "7c98d3049d33bb99fb7663a3600b8b59",
+      "lastModificationDate": 1680168198749,
+      "contentHash": "5d3b58b297f5cba2aa59fe0a21c33390",
       "sourceName": "contracts/interfaces/IEarthverseMarketplace.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -557,85 +963,8 @@
         "IEarthverseMarketplace"
       ]
     },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
-      "lastModificationDate": 1677367761088,
-      "contentHash": "95a6c227d1b8843e9385518a5bce4853",
-      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IAccessControl.sol",
-        "../utils/Context.sol",
-        "../utils/Strings.sol",
-        "../utils/introspection/ERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "AccessControl"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol": {
-      "lastModificationDate": 1677367389468,
-      "contentHash": "ffd42687b3db01d30c24213d961fcf9f",
-      "sourceName": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol"
-      ],
-      "versionPragmas": [
-        ">=0.7.5"
-      ],
-      "artifacts": [
-        "ISwapRouter"
-      ]
-    },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC721/IERC721.sol": {
-      "lastModificationDate": 1677367921767,
+      "lastModificationDate": 1678217125294,
       "contentHash": "eb7e61db29f31d88b3c1cef1b063d338",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721.sol",
       "solcConfig": {
@@ -671,223 +1000,9 @@
         "IERC721"
       ]
     },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
-      "lastModificationDate": 1677367848956,
-      "contentHash": "03e6768535ac4da0e9756f1d8a4a018a",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IERC165"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/Strings.sol": {
-      "lastModificationDate": 1677367761434,
-      "contentHash": "396031251978f8febfd90cb62cb240ec",
-      "sourceName": "@openzeppelin/contracts/utils/Strings.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./math/Math.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Strings"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
-      "lastModificationDate": 1677367761068,
-      "contentHash": "57c84298234411cea19c7c284d86be8b",
-      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "IAccessControl"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
-      "lastModificationDate": 1677367848940,
-      "contentHash": "0e7db055ce108f9da7bb6686a00287c0",
-      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./IERC165.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "ERC165"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
-      "lastModificationDate": 1677367849037,
-      "contentHash": "b9c58920ce74d6dc819161786112e7ee",
-      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Math"
-      ]
-    },
-    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol": {
-      "lastModificationDate": 1677367830049,
-      "contentHash": "a8ba2d37b0107911ae0e3b0e123cbd83",
-      "sourceName": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IUniswapV3SwapCallback"
-      ]
-    },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol": {
-      "lastModificationDate": 1677367921758,
-      "contentHash": "190f627b9302b9602d3a313e28205cc5",
+      "lastModificationDate": 1678217125273,
+      "contentHash": "f7f4f78c31f28534852e5c56000a25af",
       "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -929,7 +1044,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/Address.sol": {
-      "lastModificationDate": 1677367761360,
+      "lastModificationDate": 1678217078143,
       "contentHash": "f31ad6fc4bbf9c06203987220156a6ba",
       "sourceName": "@openzeppelin/contracts/utils/Address.sol",
       "solcConfig": {
@@ -964,7 +1079,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
-      "lastModificationDate": 1677367921746,
+      "lastModificationDate": 1678217125310,
       "contentHash": "c22d4395e33763de693fd440c6fd10e1",
       "sourceName": "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol",
       "solcConfig": {
@@ -999,7 +1114,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
-      "lastModificationDate": 1677368063868,
+      "lastModificationDate": 1678217791105,
       "contentHash": "efbc0d15b80a74e34dbe8da0f3e879bb",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol",
       "solcConfig": {
@@ -1036,8 +1151,8 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/EarthverseMarketplace.sol": {
-      "lastModificationDate": 1677369899861,
-      "contentHash": "89094c2bff3c13bfb28ffc418a9f3738",
+      "lastModificationDate": 1680127842518,
+      "contentHash": "5064f659182c47865c57bb8bf288403c",
       "sourceName": "contracts/EarthverseMarketplace.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -1076,7 +1191,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/security/ReentrancyGuard.sol": {
-      "lastModificationDate": 1677367761139,
+      "lastModificationDate": 1678217078127,
       "contentHash": "a8e2d1c30042f64ed89c9d4157eb6cb9",
       "sourceName": "@openzeppelin/contracts/security/ReentrancyGuard.sol",
       "solcConfig": {
@@ -1111,7 +1226,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {
-      "lastModificationDate": 1677368063835,
+      "lastModificationDate": 1678217791083,
       "contentHash": "8af32effd0536e2971ff8496812a5016",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
       "solcConfig": {
@@ -1148,7 +1263,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/NFTLand.sol": {
-      "lastModificationDate": 1677367338167,
+      "lastModificationDate": 1679951791850,
       "contentHash": "11903f32b05884bb6d17caa95e72ac68",
       "sourceName": "contracts/NFTLand.sol",
       "solcConfig": {
@@ -1187,8 +1302,8 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/interfaces/INFTLand.sol": {
-      "lastModificationDate": 1677367338299,
-      "contentHash": "e08476645024801b749d282ef01d4ae6",
+      "lastModificationDate": 1679951791852,
+      "contentHash": "b744bf02d176c8e2f9d372bfaf7e644f",
       "sourceName": "contracts/interfaces/INFTLand.sol",
       "solcConfig": {
         "version": "0.8.17",
@@ -1222,7 +1337,7 @@
       ]
     },
     "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/node_modules/@openzeppelin/contracts/utils/Counters.sol": {
-      "lastModificationDate": 1677367761331,
+      "lastModificationDate": 1678217078237,
       "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
       "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
       "solcConfig": {
@@ -1254,6 +1369,83 @@
       ],
       "artifacts": [
         "Counters"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/NFTAugmentedReality.sol": {
+      "lastModificationDate": 1677773743178,
+      "contentHash": "65f71b39bee00d885869a431ab24d4e1",
+      "sourceName": "contracts/NFTAugmentedReality.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "NFTAugmentedReality"
+      ]
+    },
+    "/Users/georgikaragyozov/Documents/blockchain/earthverse/earthverse-contracts-goerli/contracts/NFTDollar.sol": {
+      "lastModificationDate": 1680164846157,
+      "contentHash": "5a0f2648bdf47512f49c1b01c9c0a078",
+      "sourceName": "contracts/NFTDollar.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/INFTDollar.sol",
+        "./AccessContract.sol",
+        "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "NFTDollar"
       ]
     }
   }

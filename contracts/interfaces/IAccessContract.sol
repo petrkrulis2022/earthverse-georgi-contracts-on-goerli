@@ -3,11 +3,16 @@ pragma solidity ^0.8.17;
 
 interface IAccessContract {
   // Event
-  event EarthverseDepositAddressChanged(address oldAddress, address newAddress);
+  event NewAvailableContractAddressAdded(address newContractAddress);
+  event AvailableContractAddressRemoved(address removedContractAddress);
 
-  /// @notice Аllows the contract owner to give a new address for earthverseDeposit.
-  /// @param _earthverseDepositAddress: The address of earthverseDeposit contract.
-  function setNewEarthverseDepositAddress(
-    address _earthverseDepositAddress
+  /// @notice Allows the ownable to add a new address for the availableContracts mapping.
+  /// @param newContractAddress: The new contract address.
+  function addNewAvailableContractAddress(address newContractAddress) external;
+
+  /// @notice Allows the ownable to remove a address for the availableContracts mapping.
+  /// @param removeContractAddress: The remove contract address.
+  function removeAvailableContractAddress(
+    address removeContractAddress
   ) external;
 }

@@ -6,8 +6,7 @@ import {AccessContract} from "./AccessContract.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
 /// @author Georgi Karagyozov
-/// @notice Stablecoin NFTD contract, which NFTD tokens are minted and sent to the NFT Land seller
-/// at 1 to 1 ratio when someone buy thir NFT Land.
+/// @notice Stablecoin NFTD contract, which NFTD tokens are minted and sent to the NFT Land seller at 1 to 1 ratio when someone buy thir NFT Land.
 contract NFTDollar is INFTDollar, ERC20Burnable, AccessContract {
   constructor() ERC20("NFT Dollar", "NFTD") {}
 
@@ -19,7 +18,7 @@ contract NFTDollar is INFTDollar, ERC20Burnable, AccessContract {
     address to,
     uint256 amount,
     uint256 decimalsOfInput
-  ) external onlyEarthverseDeposit {
+  ) external onlyAvailableContract {
     _mint(to, amount * 10 ** (18 - decimalsOfInput));
   }
 }

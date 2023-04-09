@@ -13,7 +13,7 @@ import {TransferHelper} from "@uniswap/v3-periphery/contracts/libraries/Transfer
 error EarthverseDeposit_ZeroAddress();
 error EarthverseDeposit_NoRETHWasMinted();
 error EarthverseDeposit_InvalidDepositAmount();
-error EarthverseDeposit_NotStablecoinAdderRole();
+error EarthverseDeposit_NotAdminRole();
 error EarthverseDeposit_AlreadyStablecoinAdded(address stablecoin);
 error EarthverseDeposit_NotAvailableStablecoinForBuyNFTLand(address stablecoin);
 
@@ -21,12 +21,9 @@ error EarthverseDeposit_NotAvailableStablecoinForBuyNFTLand(address stablecoin);
 /// @notice EarthverseDeposit contract that is used to call the EarthverseMarketplace and NFDTollar contracts
 /// and deposit a stablecoin(USDC, DAI, USDT etc.) which swaped for WETH and staking it in Rocket Pool.
 contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
-  bytes32 public constant ADDER_STABLECOIN_ROLE =
-    keccak256("ADDER_STABLECOIN_ROLE");
-  address public constant WETH = 0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6;
-  address public constant RETH = 0x178E141a0E3b34152f73Ff610437A7bf9B83267A;
-  address public constant ROCKET_POOL_DEPOSIT =
-    0x2cac916b2A963Bf162f076C0a8a4a8200BCFBfb4;
+  address public wEth;
+  address public rEth;
+  address public rocketPoolDeposit;
 
   uint24 public constant POOL_FEE = 3000;
 
@@ -37,9 +34,9 @@ contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
   mapping(address => uint256) public balances;
   mapping(address => bool) public availableStablecoins;
 
-  modifier hasStablecoinAdderRole() {
-    if (!hasRole(ADDER_STABLECOIN_ROLE, msg.sender))
-      revert EarthverseDeposit_NotStablecoinAdderRole();
+  modifier hasAdminRole() {
+    if (!hasRole(DEFAULT_ADMIN_ROLE, msg.sender))
+      revert EarthverseDeposit_NotAdminRole();
     _;
   }
 
@@ -53,13 +50,17 @@ contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
       revert EarthverseDeposit_ZeroAddress();
 
     _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
-    _setupRole(ADDER_STABLECOIN_ROLE, msg.sender);
+
+    wEth = 0xB4FBF271143F4FBf7B91A5ded31805e42b2208d6;
+    rEth = 0x178E141a0E3b34152f73Ff610437A7bf9B83267A;
+    rocketPoolDeposit = 0x2cac916b2A963Bf162f076C0a8a4a8200BCFBfb4;
 
     nftd = _nftd;
     earthverseMarketplace = _earthverseMarketplace;
     swapRouter = ISwapRouter(0xE592427A0AEce92De3Edee1F18E0157C05861564);
 
     availableStablecoins[0x11fE4B6AE13d2a6055C8D9cF65c55bac32B5d844] = true; //DAI address
+    availableStablecoins[0xe583769738b6dd4E7CAF8451050d1948BE717679] = true; //USDT address
     availableStablecoins[0x07865c6E87B9F70255377e024ace6630C1Eaa37F] = true; //USDC address
   }
 
@@ -88,7 +89,7 @@ contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
     ISwapRouter.ExactInputSingleParams memory params = ISwapRouter
       .ExactInputSingleParams({
         tokenIn: tokenIn,
-        tokenOut: WETH,
+        tokenOut: wEth,
         fee: POOL_FEE,
         recipient: address(this),
         deadline: block.timestamp,
@@ -132,28 +133,28 @@ contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
     // Mints the native NFTD token at 1 to 1 ratio and send to the seller
     INFTDollar(nftd).mint(seller, amountIn, decimalsOfInput);
 
-    IWETH(WETH).withdraw(amountOut);
+    IWETH(wEth).withdraw(amountOut);
 
     // Queries the senders RETH balance prior to deposit
-    uint256 rethBalance1 = IERC20(RETH).balanceOf(address(this));
+    uint256 rethBalance1 = IERC20(rEth).balanceOf(address(this));
     // Deposits the ETH and gets RETH back
-    IRocketpool(ROCKET_POOL_DEPOSIT).deposit{value: amountOut}();
+    IRocketpool(rocketPoolDeposit).deposit{value: amountOut}();
     // Queries the senders RETH balance after the deposit
-    uint256 rethBalance2 = IERC20(RETH).balanceOf(address(this));
+    uint256 rethBalance2 = IERC20(rEth).balanceOf(address(this));
     if (rethBalance2 < rethBalance1) revert EarthverseDeposit_NoRETHWasMinted();
     uint256 rethMinted = rethBalance2 - rethBalance1;
 
     // Stores the amount of reth received by the user in a mapping
     balances[msg.sender] += rethMinted;
 
-    emit StakedAndReceivedNFTLand(msg.sender, amountOut);
+    emit StakedWEthAndReceivedNFTLand(msg.sender, amountOut);
   }
 
   /// @notice Allows the admin to add a new address for the stablecoin.
   /// @param stablecoinAddress: The stablecoin address.
   function addNewStablecoinAddress(
     address stablecoinAddress
-  ) external zeroAddress(stablecoinAddress) hasStablecoinAdderRole {
+  ) external zeroAddress(stablecoinAddress) hasAdminRole {
     if (availableStablecoins[stablecoinAddress])
       revert EarthverseDeposit_AlreadyStablecoinAdded(stablecoinAddress);
 
@@ -166,10 +167,40 @@ contract EarthverseDeposit is AccessControl, IEarthverseDeposit {
   /// @param stablecoinAddress: The stablecoin address.
   function removeStablecoinAddress(
     address stablecoinAddress
-  ) external zeroAddress(stablecoinAddress) hasStablecoinAdderRole {
+  ) external zeroAddress(stablecoinAddress) hasAdminRole {
     delete (availableStablecoins[stablecoinAddress]);
 
     emit StablecoinAddressRemoved(stablecoinAddress);
+  }
+
+  /// @notice Allows the admin to change the wEth address.
+  /// @param newWEthAddress: The new wEth address.
+  function setNewWEthAddress(
+    address newWEthAddress
+  ) external zeroAddress(newWEthAddress) hasAdminRole {
+    emit WEthAddressChanged(wEth, newWEthAddress);
+    wEth = newWEthAddress;
+  }
+
+  /// @notice Allows the admin to change the rEth address.
+  /// @param newREthAddress: The new rEth address.
+  function setNewREthAddress(
+    address newREthAddress
+  ) external zeroAddress(newREthAddress) hasAdminRole {
+    emit REthAddressChanged(rEth, newREthAddress);
+    rEth = newREthAddress;
+  }
+
+  /// @notice Allows the admin to change the rocketPoolDeposit address.
+  /// @param newRocketPoolDepositAddress: The new rocket pool deposit address.
+  function setNewRocketPoolDepositAddress(
+    address newRocketPoolDepositAddress
+  ) external zeroAddress(newRocketPoolDepositAddress) hasAdminRole {
+    emit RocketPoolDepositAddressChanged(
+      rocketPoolDeposit,
+      newRocketPoolDepositAddress
+    );
+    rocketPoolDeposit = newRocketPoolDepositAddress;
   }
 
   fallback() external payable {}

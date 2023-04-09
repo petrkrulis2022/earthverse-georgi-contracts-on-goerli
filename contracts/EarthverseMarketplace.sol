@@ -8,7 +8,6 @@ import {AccessContract} from "./AccessContract.sol";
 
 // Custom errors
 error EarthverseMarketplace_NotOwner();
-error EarthverseMarketplace_ZeroAddress();
 error EarthverseMarketplace_PriceMustBeAboveZero();
 error EarthverseMarketplace_AlreadyListed(uint256 tokenId);
 error EarthverseMarketplace_PriceDoNotMet(uint256 itemId, uint256 price);
@@ -17,11 +16,7 @@ error EarthverseMarketplace_SellerCannotBeBuyer();
 
 /// @author Georgi Karagyozov
 /// @notice EarthverseMarketplace contract which is used to store NFT Land and allow the buyer to purchase them.
-contract EarthverseMarketplace is
-  ReentrancyGuard,
-  IEarthverseMarketplace,
-  AccessContract
-{
+contract EarthverseMarketplace is IEarthverseMarketplace, AccessContract {
   uint256 public itemCount;
 
   mapping(uint256 => ListingNFTLand) public listing;
@@ -42,11 +37,6 @@ contract EarthverseMarketplace is
     _;
   }
 
-  modifier zeroAddress(address _address) {
-    if (_address == address(0)) revert EarthverseMarketplace_ZeroAddress();
-    _;
-  }
-
   /// @notice Allows the user/seller to add new NFT Land.
   /// @param nftLand: The address of NFT Land contract
   /// @param tokenId: The unique token mid of the NFT Land itself.
@@ -55,12 +45,7 @@ contract EarthverseMarketplace is
     IERC721 nftLand,
     uint256 tokenId,
     uint256 price
-  )
-    external
-    notListed(tokenId)
-    isOwner(nftLand, tokenId, msg.sender)
-    nonReentrant
-  {
+  ) external notListed(tokenId) isOwner(nftLand, tokenId, msg.sender) {
     if (price <= 0) revert EarthverseMarketplace_PriceMustBeAboveZero();
 
     ++itemCount;
@@ -72,8 +57,9 @@ contract EarthverseMarketplace is
       msg.sender
     );
 
-    nftLand.transferFrom(msg.sender, address(this), tokenId);
     emit NFTLandListed(itemCount, tokenId, price, msg.sender);
+
+    nftLand.transferFrom(msg.sender, address(this), tokenId);
   }
 
   /// @notice Allows the buyer to buy a given NFT Land.
@@ -87,13 +73,7 @@ contract EarthverseMarketplace is
     uint256 itemId,
     uint256 price,
     uint256 decimalsOfInput
-  )
-    external
-    zeroAddress(buyer)
-    onlyEarthverseDeposit
-    nonReentrant
-    returns (address)
-  {
+  ) external zeroAddress(buyer) onlyAvailableContract returns (address) {
     if (itemId <= 0 || itemId > itemCount)
       revert EarthverseMarketplace_ItemDoesntExit(itemId);
 
