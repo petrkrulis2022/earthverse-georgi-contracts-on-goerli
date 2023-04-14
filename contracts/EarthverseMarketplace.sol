@@ -3,7 +3,6 @@ pragma solidity ^0.8.17;
 
 import {IEarthverseMarketplace} from "./interfaces/IEarthverseMarketplace.sol";
 import {IERC721} from "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import {ReentrancyGuard} from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import {AccessContract} from "./AccessContract.sol";
 
 // Custom errors

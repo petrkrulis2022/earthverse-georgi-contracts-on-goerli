@@ -1,13 +1,10 @@
 {
   "folders": [
     {
-      "path": "../../earthverse-app"
-    },
-    {
-      "path": "../rnftd-stablecoin-app"
-    },
-    {
       "path": "."
+    },
+    {
+      "path": "../rNFTD-stablecoin-contracts"
     }
   ],
   "settings": {
